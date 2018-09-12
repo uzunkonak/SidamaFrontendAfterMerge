@@ -1,32 +1,33 @@
-
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <div class="container">
-      <a class="navbar-brand" href="#">{{appName}}</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
+    <a class="navbar-brand" href="#">{{appName}}</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
 
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
-          <!-- <li class="nav-item  active">
-            <a class="nav-link" href="{{datasetsLink}}">Datasets</a>
-          </li> -->
-        </ul>
-        <form class="form-inline my-2 my-lg-0">
-          <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-siemens btn-outline-primary my-2 my-sm-0 mx-1" type="submit">Search</button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <!-- <li class="nav-item  active">
+          <a class="nav-link" href="{{datasetsLink}}">Datasets</a>
+        </li> -->
+      </ul>
+      <form class="form-inline my-2 my-lg-0">
+        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-siemens btn-outline-primary my-2 my-sm-0 mx-1" type="submit">Search</button>
 
-                  <!-- Button trigger modal -->
-          <button type="button" class="btn btn-siemens btn-outline-primary my-2 my-sm-0 mx-1" data-toggle="modal" data-target="#login-modal">
-            Login
-          </button>
-        </form>
-      </div>
-  </div>
-
-    <div>
+        <!-- Button trigger modal -->
+        <button [hidden]="isLoggedIn" type="button" class="btn btn-siemens btn-outline-primary my-2 my-sm-0 mx-1" (click)="openLoginPopup()">
+          Login
+        </button>
+        <button [hidden]="!isLoggedIn" type="button" class="btn btn-siemens btn-outline-primary my-2 my-sm-0 mx-1" (click)="logout()">
+        <a [routerLink]="['/landing']">Logout</a>
+        </button>
+      </form>
     </div>
-  </nav>
+  </div>
+  <app-login-comp [display]="display" (displayChange)="onDialogClose($event)"></app-login-comp>
+</nav>
 
 
 

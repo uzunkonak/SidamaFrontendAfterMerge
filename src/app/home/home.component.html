@@ -1,16 +1,24 @@
-﻿<div class="col-md-6 col-md-offset-3">
-    <p>Hi {{currentUser.fullname}}</p>
-    <p>Welcome to Sidama</p>
-    <h3>All datasets:</h3>
-    <ul>
-        <li *ngFor="let dataset of datasets">
-            <b>Name:</b> {{dataset.name}} <br/>
-            <b>Description:</b> {{dataset.description}} <br/>
-            <b>Format:</b> {{dataset.format}} <br/>
-            <b>Last updated:</b> {{dataset.lastUpdated}} <br/>
-            <b>Size in kilo bytes:</b> {{dataset.sizeInKiloBytes}} <br/>
-            <b>Tags:</b> {{dataset.tags}} <br/>
-        </li>
-    </ul>
-    <p><a [routerLink]="['/login']">Logout</a></p>
-</div>
+﻿<app-navbar-comp [isLoggedIn]="true"></app-navbar-comp>
+
+<p-table [value]="datasets">
+  <ng-template pTemplate="header">
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Format</th>
+      <th>Last Updated</th>
+      <th>Size</th>
+      <th>Tags</th>
+    </tr>
+  </ng-template>
+  <ng-template pTemplate="body" let-dataset>
+    <tr>
+      <td>{{dataset.name}}</td>
+      <td>{{dataset.description}}</td>
+      <td>{{dataset.format}}</td>
+      <td>{{dataset.lastUpdated}}</td>
+      <td>{{dataset.sizeInKiloBytes}}</td>
+      <td>{{dataset.tags}}</td>
+    </tr>
+  </ng-template>
+</p-table>

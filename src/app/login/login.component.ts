@@ -1,16 +1,29 @@
-﻿import { Component, OnInit } from '@angular/core';
+﻿import {Component, EventEmitter, Input, OnDestroy, OnInit, Output} from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 
 import { AlertService, AuthenticationService } from '../_services/index';
 
 @Component({
-    templateUrl: 'login.component.html'
+    templateUrl: 'login.component.html',
+    selector: 'app-login-comp',
+    styleUrls: ['./login.component.css']
 })
 
-export class LoginComponent implements OnInit {
+export class LoginComponent implements OnInit, OnDestroy {
     model: any = {};
     loading = false;
     returnUrl: string;
+    @Input() display: boolean;
+    @Output() displayChange = new EventEmitter();
+
+    onClose() {
+      this.displayChange.emit(false);
+    }
+
+    // Work against memory leak if component is destroyed
+    ngOnDestroy() {
+      this.displayChange.unsubscribe();
+    }
 
     constructor(
         private route: ActivatedRoute,

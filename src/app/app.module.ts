@@ -15,6 +15,9 @@ import {LandingComponent} from './landing/index';
 import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {NavbarComponent} from './navbar/index';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {DialogModule} from 'primeng/dialog';
+import {TableModule} from 'primeng/table';
 
 @NgModule({
   declarations: [
@@ -32,7 +35,10 @@ import {NavbarComponent} from './navbar/index';
     FormsModule,
     HttpClientModule,
     routing,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    BrowserAnimationsModule,
+    DialogModule,
+    TableModule
   ],
   providers: [
     AuthGuard,
