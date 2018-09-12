@@ -1,0 +1,33 @@
+<app-navbar-comp></app-navbar-comp>
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12 col-md-8 d-flex flex-col" id="main-layout">
+            <div class="flex-row row pl-4">
+                <div class="col-md-12 d-flex flex-row">
+                    <h3 class="d-flex">{{title}}</h3>
+                </div>
+                <div class="col-md-12 d-flex">
+                    <p id="description" class="d-flex">{{description}}</p>
+                </div>
+                <div id="img-container" class="col-md-12 d-flex">
+                    <img src="../../assets/images/SIDAMA_logo.png" class="d-flex m-auto" width="310" height="310"/>
+                </div>
+                <div id="register-slogan-container" class="col-md-12 d-flex">
+                    <h3 id="register-slogan" class="m-auto">{{registerSlogan}}</h3>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-12 col-md-4" id="side-layout">
+            <div>
+                <h3 class="d-flex">Register</h3>
+            </div>
+            <div class="col-md-12 d-flex flex-row w-100">
+                <hr class="p-3 m-3 w-100"/>
+            </div>
+            <div>
+                <app-register-comp></app-register-comp>
+            </div>
+        </div>
+    </div>
+</div>

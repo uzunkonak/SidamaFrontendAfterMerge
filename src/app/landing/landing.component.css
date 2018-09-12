@@ -1,0 +1,47 @@
+#main-layout {
+  background-color: #FAFAFA;
+  min-height: 100vh;
+}
+#main-layout h3,
+#main-layout p {
+  color: black;
+}
+h3,
+p,
+h2,
+h1 {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+p {
+  font-size: 18px;
+}
+#side-layout {
+  background-color: #EAEAEA;
+}
+#description {
+  height: 30px;
+  width: 400px;
+}
+#img-container,
+#register-slogan-container {
+  padding-right: 20%;
+}
+#img-container img,
+#register-slogan-container img {
+  margin-right: 20px !important;
+}
+#img-container {
+  background-color: #dee5ef;
+}
+h3 {
+  margin-top: 80px;
+  color: #325c89 !important;
+}
+.btn-siemens {
+  color: #09a8b7 !important;
+  border-color: #09a8b7 !important;
+}
+#register-slogan {
+  color: #0D94A3 !important;
+}
+/*# sourceMappingURL=landing.component.css.map */
